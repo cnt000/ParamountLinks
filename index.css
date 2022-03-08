@@ -1,6 +1,10 @@
 @import "open-props/normalize";
 @import "open-props/buttons";
 
+:root {
+  --box-width: 375px;
+}
+
 html {
   background-image: var(--gradient-18);
 }
@@ -30,7 +34,7 @@ form {
   gap: var(--size-5);
   justify-items: start;
   position: relative;
-  width: 375px;
+  width: var(--box-width);
 }
 
 h1 {
@@ -62,8 +66,8 @@ h1:after {
   animation: shad-anim 15s linear infinite;
 }
 
-.result {
-  width: 100%;
+#result {
+  width: var(--box-width);
 }
 
 select {
