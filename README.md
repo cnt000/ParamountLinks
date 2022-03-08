@@ -1,3 +1,3 @@
-# jit-open-props-f2pynh
+# Paramount links
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/jit-open-props-f2pynh)
+Open website easily
