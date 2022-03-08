@@ -1,48 +1,21 @@
-/* Welcome 🎉 */
-/* Use Open-Props from NPM or CDN */
-/* @import 'open-props/style'; */
-/* @import 'https://unpkg.com/open-props'; */
-/* not needed here because JIT Props adds what you use! */
-
-/* 
- open-props normalize isn't required, but makes for a nice base.
- add this to see default styles for <details> and other HTM5 elements
- Bonus: normalize includes light and dark vars for adaptive theming */
-@import 'open-props/normalize';
-/* @import 'https://unpkg.com/open-props/normalize.min.css'; */
-@import 'open-props/buttons';
+@import "open-props/normalize";
+@import "open-props/buttons";
 
 html {
-  /* try on some alt gradients why dont ya! */
   background-image: var(--gradient-18);
 }
-
-/* 
- As you use props, the PostCSS plugin     
- "jit-props" will add them to the stylesheet.
- see postcss.config.js for more 
-*/
 
 ul,
 li {
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-inline: 0;
 }
 
-a {
-  /* try on some other link colors: violet, indigo, lime, orange, etc */
-  color: var(--pink-0);
-  text-shadow: 0 1px 0 var(--gray-8);
-}
-
+a,
 a:visited {
-  color: var(--violet-0);
-}
-
-summary::marker {
-  color: var(--pink-5);
+  color: white;
+  text-shadow: 0 1px 0 var(--violet-9);
 }
 
 body {
@@ -51,20 +24,76 @@ body {
   padding: var(--size-5);
 }
 
-main {
+main,
+form {
   display: grid;
   gap: var(--size-5);
   justify-items: start;
+  position: relative;
+}
+
+h1 {
+  font-family: var(--font-sans);
+  display: inline-block;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 0.03em 0.03em 0 var(--violet-6);
+}
+
+h1:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: 0.09em;
+  left: 0.09em;
+  z-index: -1;
+  text-shadow: none;
+  background-image: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgb(38, 0, 255) 45%,
+    rgb(255, 0, 0) 55%,
+    transparent 0
+  );
+  background-size: 0.05em 0.05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shad-anim 15s linear infinite;
+}
+
+select {
+  color: var(--violet-6);
+  background-image: var(--gradient-4);
+  border-radius: var(--radius-2);
+  width: 100%;
+  border: 1px solid var(--violet-6);
+  font-size: var(--font-size-4);
 }
 
 ul {
-  padding-inline: var(--size-4);
+  background-color: hsl(var(--violet-9-hsl) / 25%);
+  padding: var(--size-1) var(--size-2);
+  border-radius: var(--radius-2);
 }
 
-h2 {
-  display: grid;
-  animation: var(--animation-scale-down) reverse,
-    var(--animation-fade-out) reverse;
-  animation-timing-function: var(--ease-squish-5);
-  animation-duration: 1s;
+li {
+  margin: 1rem 0;
+}
+.openall-container {
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+}
+
+.openall-container p {
+  font-size: var(--font-size-1);
+}
+
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
 }
