@@ -30,6 +30,7 @@ form {
   gap: var(--size-5);
   justify-items: start;
   position: relative;
+  width: 375px;
 }
 
 h1 {
@@ -59,6 +60,10 @@ h1:after {
   -webkit-text-fill-color: transparent;
 
   animation: shad-anim 15s linear infinite;
+}
+
+.result {
+  width: 100%;
 }
 
 select {
