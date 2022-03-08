@@ -8,7 +8,8 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "surge": "surge dist/ --domain paramount-links.surge.sh "
   },
   "dependencies": {
     "canvas-confetti": "^1.3.3",
